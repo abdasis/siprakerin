@@ -35,7 +35,6 @@ class Sunting extends Component
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'email' => 'required',
-            'alamat' => 'required|min:3',
         ];
     }
 
@@ -52,7 +51,7 @@ class Sunting extends Component
             $user->roles = 'siswa';
             $user->save();
 
-            $siswa = Siswa::where('user_id', $this->user_id)->fisrt();
+            $siswa = Siswa::where('user_id', $user->id)->first();
             $siswa->nama_lengkap = $this->nama_lengkap;
             $siswa->jenis_kelamin = $this->jenis_kelamin;
             $siswa->nis = $this->nis;

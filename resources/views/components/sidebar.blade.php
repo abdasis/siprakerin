@@ -44,10 +44,10 @@
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
-                                <a href="html/project-card.html" class="nk-menu-link"><span class="nk-menu-text">Project Cards</span></a>
+                                <a href="{{route('siswa.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Siswa</span></a>
                             </li>
                             <li class="nk-menu-item">
-                                <a href="html/project-list.html" class="nk-menu-link"><span class="nk-menu-text">Project List</span></a>
+                                <a href="{{route('siswa.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Siswa</span></a>
                             </li>
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->

@@ -6,9 +6,9 @@
                 <div class="card-header">Detail Pengguna</div>
                 <div class="card-body">
                     <div class="text-center">
-                        <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" width="150" class="rounded-circle" alt="">
-                        <h5 class="mt-3">{{Auth::user()->name}}</h5>
-                        <p class="">{{Auth::user()->email}}</p>
+                        <img src="{{asset('storage') . '/' . $siswa->photo ?? 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' }}" width="150" class="rounded-circle" alt="">
+                        <h5 class="mt-3">{{$siswa->nama_lengkap}}</h5>
+                        <p class="">{{$siswa->user->email}}</p>
                     </div>
                 </div>
             </div>
@@ -22,19 +22,19 @@
                         <tr>
                             <td>Nama Lengkap</td>
                             <td>:</td>
-                            <td>{{Auth::user()->name}}</td>
+                            <td>{{$siswa->nama_lengkap}}</td>
                         </tr>
 
                         <tr>
-                            <td>Jabatan</td>
+                            <td>Tempat Lahir</td>
                             <td>:</td>
-                            <td>{{$admin->jabatan}}</td>
+                            <td>{{$siswa->tempat_lahir}}</td>
                         </tr>
 
                         <tr>
-                            <td>Title</td>
+                            <td>Tanggal Lahir</td>
                             <td>:</td>
-                            <td>{{$admin->title}}</td>
+                            <td>{{$siswa->tanggal_lahir}}</td>
                         </tr>
                     </table>
                 </div>

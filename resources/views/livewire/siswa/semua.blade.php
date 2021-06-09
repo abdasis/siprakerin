@@ -24,35 +24,37 @@
                 <th>No.</th>
                 <th>Nama Lengkap</th>
                 <th>Email</th>
-                <th>Jabatan</th>
-                <th>Title</th>
+                <th>NIS</th>
+                <th>TTL</th>
+                <th>Jurusan</th>
                 <th class="text-center">Option</th>
             </tr>
             </thead>
 
             <tbody>
-            @foreach($semua_admin as $key => $admin)
+            @foreach($semua_siswa as $key => $siswa)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$admin->nama_lengkap}}</td>
-                    <td>{{$admin->user->email}}</td>
-                    <td>{{$admin->jabatan}}</td>
-                    <td>{{$admin->title}}</td>
+                    <td>{{$siswa->nama_lengkap}}</td>
+                    <td>{{$siswa->nis}}</td>
+                    <td>{{$siswa->user->email}}</td>
+                    <td>{{$siswa->tempat_lahir}}, {{\Carbon\Carbon::parse($siswa->tanggal_lahir)->format('d-m-Y')}}</td>
+                    <td>{{$siswa->jurusan}}</td>
                     <td class="text-center">
-                        <a href="{{route('admin.edit', $admin->user->id)}}">
+                        <a href="{{route('siswa.sunting', $siswa->user->id)}}">
                             <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
                         </a>
-                        <a href="{{route('admin.detail', $admin->id)}}">
+                        <a href="{{route('siswa.detail', $siswa->id)}}">
                             <button class="btn btn-sm btn-outline-info"><em class="icon ni ni-eye"></em></button>
                         </a>
-                        <button wire:click="hapus({{$admin->id}})" class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em></button>
+                        <button wire:click="hapus({{$siswa->id}})" class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em></button>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
         <div class="card-footer bg-white">
-            {{$semua_admin->links()}}
+            {{$semua_siswa->links()}}
         </div>
     </div>
 </div>

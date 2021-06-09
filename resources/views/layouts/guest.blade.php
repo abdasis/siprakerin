@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{asset('assets/css/dashlite.css?ver=2.3.0')}}">
+        <link id="skin-default" rel="stylesheet" href="{{asset('assets/css/theme.css?ver=2.3.0')}}">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>

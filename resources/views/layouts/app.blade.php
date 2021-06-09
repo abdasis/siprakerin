@@ -11,10 +11,12 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
     <!-- Page Title  -->
-    <title>Sales Dashboard | DashLite Admin Template</title>
+    <title>SI PRAKERIN | SISTEM MANAGEMENT PRAKERIN</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('assets/css/dashlite.css?ver=2.3.0')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('assets/css/theme.css?ver=2.3.0')}}">
+    @livewireStyles
+    @stack('css')
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ui-softy">
@@ -66,6 +68,10 @@
 <!-- JavaScript -->
 <script src="{{asset('assets/js/bundle.js?ver=2.3.0')}}"></script>
 <script src="{{asset('assets/js/scripts.js?ver=2.3.0')}}"></script>
+<script src="{{mix('js/app.js')}}"></script>
+@livewireScripts
+<x-livewire-alert::scripts />
+@stack('js')
 </body>
 
 </html>

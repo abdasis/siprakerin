@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Siswa::class);
     }
+
+    public function dudi()
+    {
+        return $this->hasOne(Dudi::class);
+    }
 }

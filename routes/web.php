@@ -31,6 +31,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::get('sunting/{id}', \App\Http\Livewire\Siswa\Sunting::class)->name('siswa.sunting');
         Route::get('detail/{id}', \App\Http\Livewire\Siswa\Detail::class)->name('siswa.detail');
     });
+
+    Route::group(['prefix' => 'dudi'], function (){
+       Route::get('semua', \App\Http\Livewire\Dudi\Semua::class)->name('dudi.semua');
+       Route::get('tambah', \App\Http\Livewire\Dudi\Tambah::class)->name('dudi.tambah');
+       Route::get('sunting/{id}', \App\Http\Livewire\Dudi\Sunting::class)->name('dudi.sunting');
+       Route::get('detail/{id}', \App\Http\Livewire\Dudi\Detail::class)->name('dudi.detail');
+    });
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
        Route::get('sunting/{id}', \App\Http\Livewire\Dudi\Sunting::class)->name('dudi.sunting');
        Route::get('detail/{id}', \App\Http\Livewire\Dudi\Detail::class)->name('dudi.detail');
     });
+
+    Route::get('pilih-penempatan', \App\Http\Livewire\PilihPenempatan::class)->name('pilih-penempatan');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

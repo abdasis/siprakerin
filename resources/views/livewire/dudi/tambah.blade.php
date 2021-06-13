@@ -2,7 +2,7 @@
     {{-- Stop trying to control. --}}
     <div class="card">
         <div class="card-header bg-white border-bottom">
-            <h5>Form Tambah Siswa</h5>
+            <h5>Form Tambah Dunia Usaha / Dunia Industri</h5>
         </div>
         <div class="card-body">
             @if(session()->has('message'))

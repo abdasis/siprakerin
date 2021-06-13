@@ -39,11 +39,8 @@
                     <td>{{$dudi->user->email}}</td>
                     <td>{{$dudi->telepon}}</td>
                     <td class="text-center">
-                        <a href="{{route('siswa.sunting', $dudi->user->id)}}">
+                        <a href="{{route('dudi.sunting', $dudi->id)}}">
                             <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
-                        </a>
-                        <a href="{{route('siswa.detail', $dudi->id)}}">
-                            <button class="btn btn-sm btn-outline-info"><em class="icon ni ni-eye"></em></button>
                         </a>
                         <button wire:click="hapus({{$dudi->id}})" class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em></button>
                     </td>

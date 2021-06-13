@@ -13,4 +13,9 @@ class Siswa extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function dudi()
+    {
+        return $this->belongsToMany(Dudi::class, 'dudi_siswa');
+    }
 }

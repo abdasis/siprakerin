@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Dudi;
 
 use App\Models\Dudi;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 
@@ -17,7 +18,7 @@ class Sunting extends Component
         $this->nama_perusahaan = $dudi->nama_perusahaan;
         $this->nama_direktur  = $dudi->nama_direktur;
         $this->telepon = $dudi->telepon;
-        $this->email = $dudi->email;
+        $this->email = $dudi->user->email;
         $this->alamat = $dudi->alamat;
         $this->dudi_id = $dudi->id;
     }
@@ -41,18 +42,17 @@ class Sunting extends Component
         try {
 
             \DB::beginTransaction();
-            $user = new User();
+            $dudi = Dudi::find($this->dudi_id);
+            $user = User::where('id', $dudi->user_id)->first();
+
             $user->email = $this->email;
             $user->password = \Hash::make($this->password);
             $user->name = $this->nama_perusahaan;
             $user->save();
 
-
-            $dudi = new Dudi();
             $dudi->nama_perusahaan = $this->nama_perusahaan;
             $dudi->nama_direktur = $this->nama_direktur;
             $dudi->telepon = $this->telepon;
-            $dudi->email = $this->email;
             $dudi->alamat = $this->alamat;
             $user->dudi()->save($dudi);
             \DB::commit();

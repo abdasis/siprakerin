@@ -66,6 +66,15 @@
                         </ul><!-- .nk-menu-sub -->
                     </li><!-- .nk-menu-item -->
 
+                    <li class="nk-menu-item">
+                        <a href="{{route('pilih-penempatan')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-location"></em></span>
+                            <span class="nk-menu-text">Penempatan</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
+
+
+
                 </ul><!-- .nk-menu -->
             </div><!-- .nk-sidebar-menu -->
         </div><!-- .nk-sidebar-content -->

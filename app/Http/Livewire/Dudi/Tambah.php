@@ -33,6 +33,7 @@ class Tambah extends Component
             $user->email = $this->email;
             $user->password = \Hash::make($this->password);
             $user->name = $this->nama_perusahaan;
+            $user->roles = 'dudi';
             $user->save();
 
 

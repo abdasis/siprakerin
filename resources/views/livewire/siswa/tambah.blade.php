@@ -73,10 +73,9 @@
                             <label for="" class="form-label">Jurusan</label>
                             <select name="" wire:model="jurusan" id="" class="form-control">
                                 <option value="">Pilih Jurusan</option>
-                                <option value="TKJ">Teknik Komputer dan Jaringan</option>
-                                <option value="TSM">Teknik Sepeda Motor</option>
-                                <option value="Akutansi">Akutansi</option>
-                                <option value="RPL">Rekayasa Perangkat Lunak</option>
+                                @foreach(\App\Models\Jurusan::latest()->get() as $jurusan)
+                                    <option value="{{$jurusan->nama_jurusan}}">{{$jurusan->nama_jurusan}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

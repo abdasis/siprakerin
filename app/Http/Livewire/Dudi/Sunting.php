@@ -66,3 +66,4 @@ class Sunting extends Component
         return view('livewire.dudi.sunting');
     }
 }
+

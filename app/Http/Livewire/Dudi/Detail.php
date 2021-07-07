@@ -11,3 +11,4 @@ class Detail extends Component
         return view('livewire.dudi.detail');
     }
 }
+

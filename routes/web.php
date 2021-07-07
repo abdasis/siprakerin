@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Livewire\Admin\Edit;
+use App\Http\Livewire\Dudi\Detail;
+use App\Http\Livewire\Dudi\Sunting;
+use App\Http\Livewire\Dudi\Tambah;
+use App\Http\Livewire\Jurusan\Semua;
+use App\Http\Livewire\PilihPenempatan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +27,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::group(['prefix' => 'admin'], function(){
         Route::get('/semua', \App\Http\Livewire\Admin\Semua::class)->name('admin.semua');
         Route::get('tambah', \App\Http\Livewire\Admin\Tambah::class)->name('admin.tambah');
-        Route::get('sunting/{id}', \App\Http\Livewire\Admin\Edit::class)->name('admin.edit');
+        Route::get('sunting/{id}', Edit::class)->name('admin.edit');
         Route::get('detail{id}', \App\Http\Livewire\Admin\Detail::class)->name('admin.detail');
     });
 
@@ -34,14 +40,22 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::group(['prefix' => 'dudi'], function (){
        Route::get('semua', \App\Http\Livewire\Dudi\Semua::class)->name('dudi.semua');
-       Route::get('tambah', \App\Http\Livewire\Dudi\Tambah::class)->name('dudi.tambah');
-       Route::get('sunting/{id}', \App\Http\Livewire\Dudi\Sunting::class)->name('dudi.sunting');
-       Route::get('detail/{id}', \App\Http\Livewire\Dudi\Detail::class)->name('dudi.detail');
+       Route::get('tambah', Tambah::class)->name('dudi.tambah');
+       Route::get('sunting/{id}', Sunting::class)->name('dudi.sunting');
+       Route::get('detail/{id}', Detail::class)->name('dudi.detail');
     });
 
-    Route::get('pilih-penempatan', \App\Http\Livewire\PilihPenempatan::class)->name('pilih-penempatan');
+    Route::get('jurusan', Semua::class)->name('jurusan.semua');
+
+    Route::get('pilih-penempatan', PilihPenempatan::class)->name('pilih-penempatan');
+
+    Route::group(['prefix' => 'absensi'], function(){
+        Route::get('semua', \App\Http\Livewire\Absensi\Semua::class)->name('absensi.semua');
+    });
+    Route::get('lokasi', function (){
+       $lokasi = \Stevebauman\Location\Facades\Location::get();
+       dd($lokasi);
+    });
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');

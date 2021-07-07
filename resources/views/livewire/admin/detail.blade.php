@@ -7,8 +7,8 @@
                 <div class="card-body">
                     <div class="text-center">
                         <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" width="150" class="rounded-circle" alt="">
-                        <h5 class="mt-3">{{Auth::user()->name}}</h5>
-                        <p class="">{{Auth::user()->email}}</p>
+                        <h5 class="mt-3">{{$admin->user->name}}</h5>
+                        <p class="">{{$admin->user->email}}</p>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         <tr>
                             <td>Nama Lengkap</td>
                             <td>:</td>
-                            <td>{{Auth::user()->name}}</td>
+                            <td>{{$admin->user->name}}</td>
                         </tr>
 
                         <tr>

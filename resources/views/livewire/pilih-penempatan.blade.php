@@ -79,7 +79,7 @@
                                             <hr>
                                             <ul>
                                                 @foreach($dudi->siswa as $siswa)
-                                                    <li>{{$siswa->nama_lengkap}}</li>
+                                                    <li>{{$siswa->nama_lengkap}} <span wire:click="deleteSiswa({{$siswa->id}})" class="float-right"><em class="icon ni ni-trash-alt"></em></span></li>
                                                 @endforeach
                                             </ul>
                                         </div>

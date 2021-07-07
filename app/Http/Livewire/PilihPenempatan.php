@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Dudi;
+use App\Models\Siswa;
 use Livewire\Component;
 
 class PilihPenempatan extends Component
@@ -30,6 +31,13 @@ class PilihPenempatan extends Component
         }catch (\Exception $exception){
             $this->alert('error', $exception->getMessage());
         }
+    }
+
+    public function deleteSiswa($id)
+    {
+        $siswa = Siswa::find($id);
+        $siswa->dudi()->detach();
+        $this->alert('success', 'Data berhasil dihapus');
     }
     public function render()
     {

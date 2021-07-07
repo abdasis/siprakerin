@@ -73,6 +73,13 @@
                         </a>
                     </li><!-- .nk-menu-item -->
 
+                    <li class="nk-menu-item">
+                        <a href="{{route('jurusan.semua')}}" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
+                            <span class="nk-menu-text">Jurusan</span>
+                        </a>
+                    </li><!-- .nk-menu-item -->
+
 
 
                 </ul><!-- .nk-menu -->

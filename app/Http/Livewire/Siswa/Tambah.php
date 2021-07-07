@@ -35,13 +35,19 @@ class Tambah extends Component
     public function simpan()
     {
         $this->validate();
+        if ($this->photo){
+              $photo =   $this->photo->storeAs('avatar', \Str::slug($this->nama_lengkap) . '.' . $this->photo->extension());
+        }else{
+            $photo = 'default.png';
+        }
+
         try {
             \DB::beginTransaction();
 
             $user = new User();
             $user->name = $this->nama_lengkap;
             $user->email = $this->email;
-            $user->password = $this->password;
+            $user->password = \Hash::make($this->password);
             $user->roles = 'siswa';
             $user->save();
 
@@ -53,7 +59,7 @@ class Tambah extends Component
             $siswa->tempat_lahir = $this->tempat_lahir;
             $siswa->tanggal_lahir = $this->tanggal_lahir;
             $siswa->alamat = $this->alamat;
-            $siswa->photo = $this->photo->storeAs('avatar', \Str::slug($this->nama_lengkap) . '.png');
+            $siswa->photo = $photo;
             $user->siswa()->save($siswa);
             $this->alert('success', 'Data siswa berhasil disimpan');
 

@@ -62,6 +62,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
        $lokasi = \Stevebauman\Location\Facades\Location::get();
        dd($lokasi);
     });
+
+    Route::get('keluar', function(){
+        Auth::logout();
+    })->name('keluar');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');

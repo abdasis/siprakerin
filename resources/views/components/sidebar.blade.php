@@ -118,6 +118,13 @@
                                 <span class="nk-menu-text">Absensi</span>
                             </a>
                         </li><!-- .nk-menu-item -->
+
+                        <li class="nk-menu-item">
+                            <a href="{{route('nilai.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-book"></em></span>
+                                <span class="nk-menu-text">Nilai</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->
                 @elseif(Auth::user()->roles == 'siswa')
                     <ul class="nk-menu">

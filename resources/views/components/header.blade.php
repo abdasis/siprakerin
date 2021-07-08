@@ -32,7 +32,7 @@
                                     <em class="icon ni ni-user-alt"></em>
                                 </div>
                                 <div class="user-info d-none d-md-block">
-                                    <div class="user-status">Administrator</div>
+                                    <div class="user-status">{{Str::upper(Auth::user()->roles)}}</div>
                                     <div class="user-name dropdown-indicator">{{Auth::user()->name}}</div>
                                 </div>
                             </div>

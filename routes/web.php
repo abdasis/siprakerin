@@ -52,6 +52,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::group(['prefix' => 'absensi'], function(){
         Route::get('semua', \App\Http\Livewire\Absensi\Semua::class)->name('absensi.semua');
     });
+
+    Route::group(['prefix' => 'nilai'], function(){
+        Route::get('semua', \App\Http\Livewire\Nilai\Semua::class)->name('nilai.semua');
+        Route::get('tambah', \App\Http\Livewire\Nilai\Tambah::class)->name('nilai.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Nilai\Sunting::class)->name('nilai.sunting');
+    });
     Route::get('lokasi', function (){
        $lokasi = \Stevebauman\Location\Facades\Location::get();
        dd($lokasi);

@@ -18,4 +18,9 @@ class Siswa extends Model
     {
         return $this->belongsToMany(Dudi::class, 'dudi_siswa');
     }
+
+    public function nilai()
+    {
+        return $this->hasOne(Nilai::class);
+    }
 }

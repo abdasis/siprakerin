@@ -13,83 +13,131 @@
     <div class="nk-sidebar-element">
         <div class="nk-sidebar-content">
             <div class="nk-sidebar-menu" data-simplebar>
-                <ul class="nk-menu">
-                    <li class="nk-menu-item">
-                        <a href="{{url('dashboard')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
-                            <span class="nk-menu-text">Dashboard</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-heading">
-                        <h6 class="overline-title text-primary-alt">Apps</h6>
-                    </li><!-- .nk-menu-heading -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
-                            <span class="nk-menu-text">Data Admin</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{route('admin.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Admin</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{route('admin.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Admin</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
-                            <span class="nk-menu-text">Data Siswa</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{route('siswa.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Siswa</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{route('siswa.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Siswa</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
-                    <li class="nk-menu-item has-sub">
-                        <a href="#" class="nk-menu-link nk-menu-toggle">
-                            <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
-                            <span class="nk-menu-text">Data Dudi</span>
-                        </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a href="{{route('dudi.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Dudi</span></a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a href="{{route('dudi.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Dudi</span></a>
-                            </li>
-                        </ul><!-- .nk-menu-sub -->
-                    </li><!-- .nk-menu-item -->
+                @if(Auth::user()->roles == 'admin')
+                    <ul class="nk-menu">
+                        <li class="nk-menu-item">
+                            <a href="{{url('dashboard')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
+                                <span class="nk-menu-text">Dashboard</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-heading">
+                            <h6 class="overline-title text-primary-alt">Apps</h6>
+                        </li><!-- .nk-menu-heading -->
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                                <span class="nk-menu-text">Data Admin</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                <li class="nk-menu-item">
+                                    <a href="{{route('admin.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Admin</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('admin.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Admin</span></a>
+                                </li>
+                            </ul><!-- .nk-menu-sub -->
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+                                <span class="nk-menu-text">Data Siswa</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                <li class="nk-menu-item">
+                                    <a href="{{route('siswa.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Siswa</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('siswa.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Siswa</span></a>
+                                </li>
+                            </ul><!-- .nk-menu-sub -->
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
+                                <span class="nk-menu-text">Data Dudi</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                <li class="nk-menu-item">
+                                    <a href="{{route('dudi.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Dudi</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('dudi.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Dudi</span></a>
+                                </li>
+                            </ul><!-- .nk-menu-sub -->
+                        </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item">
-                        <a href="{{route('pilih-penempatan')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-location"></em></span>
-                            <span class="nk-menu-text">Penempatan</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('pilih-penempatan')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-location"></em></span>
+                                <span class="nk-menu-text">Penempatan</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item">
-                        <a href="{{route('jurusan.semua')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
-                            <span class="nk-menu-text">Jurusan</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('jurusan.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
+                                <span class="nk-menu-text">Jurusan</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
 
-                    <li class="nk-menu-item">
-                        <a href="{{route('absensi.semua')}}" class="nk-menu-link">
-                            <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
-                            <span class="nk-menu-text">Absensi</span>
-                        </a>
-                    </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('absensi.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-calender-date"></em></span>
+                                <span class="nk-menu-text">Absensi</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+
+                        <li class="nk-menu-item">
+                            <a href="{{route('nilai.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-book"></em></span>
+                                <span class="nk-menu-text">Nilai</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
 
 
 
-                </ul><!-- .nk-menu -->
+
+
+                    </ul><!-- .nk-menu -->
+                @elseif(Auth::user()->roles == 'dudi')
+                    <ul class="nk-menu">
+                        <li class="nk-menu-item">
+                            <a href="{{url('dashboard')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
+                                <span class="nk-menu-text">Dashboard</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-heading">
+                            <h6 class="overline-title text-primary-alt">Apps</h6>
+                        </li><!-- .nk-menu-heading -->
+
+                        <li class="nk-menu-item">
+                            <a href="{{route('absensi.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
+                                <span class="nk-menu-text">Absensi</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                    </ul><!-- .nk-menu -->
+                @elseif(Auth::user()->roles == 'siswa')
+                    <ul class="nk-menu">
+                        <li class="nk-menu-item">
+                            <a href="{{url('dashboard')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
+                                <span class="nk-menu-text">Dashboard</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-heading">
+                            <h6 class="overline-title text-primary-alt">Apps</h6>
+                        </li><!-- .nk-menu-heading -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('absensi.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
+                                <span class="nk-menu-text">Absensi</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                    </ul><!-- .nk-menu -->
+                @endif
             </div><!-- .nk-sidebar-menu -->
         </div><!-- .nk-sidebar-content -->
     </div><!-- .nk-sidebar-element -->

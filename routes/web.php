@@ -65,6 +65,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('keluar', function(){
         Auth::logout();
+        redirect('/dashboard');
     })->name('keluar');
 });
 

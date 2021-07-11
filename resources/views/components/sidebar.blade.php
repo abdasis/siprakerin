@@ -1,9 +1,9 @@
 <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-sidebar-brand">
-            <a href="html/index.html" class="logo-link nk-sidebar-logo">
-                <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+            <a href="{{route('dashboard')}}" class="logo-link nk-sidebar-logo">
+                <img class="logo-light logo-img" src="{{asset('images/logo.png')}}" srcset="./images/logo2x.png 2x" alt="logo">
+                <img class="logo-dark logo-img" src="{{asset('images/logo-dark.png')}}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
             </a>
         </div>
         <div class="nk-menu-trigger mr-n2">
@@ -52,6 +52,25 @@
                                 </li>
                             </ul><!-- .nk-menu-sub -->
                         </li><!-- .nk-menu-item -->
+
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>
+                                <span class="nk-menu-text">Document</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                <li class="nk-menu-item">
+                                    <a href="{{route('document.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Document</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('document.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Document</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('surat-keterangan.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Surat Keterangan</span></a>
+                                </li>
+                            </ul><!-- .nk-menu-sub -->
+                        </li><!-- .nk-menu-item -->
+
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
                                 <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
@@ -81,12 +100,6 @@
                             </a>
                         </li><!-- .nk-menu-item -->
 
-                        <li class="nk-menu-item">
-                            <a href="{{route('absensi.semua')}}" class="nk-menu-link">
-                                <span class="nk-menu-icon"><em class="icon ni ni-calender-date"></em></span>
-                                <span class="nk-menu-text">Absensi</span>
-                            </a>
-                        </li><!-- .nk-menu-item -->
 
                         <li class="nk-menu-item">
                             <a href="{{route('nilai.semua')}}" class="nk-menu-link">
@@ -95,7 +108,12 @@
                             </a>
                         </li><!-- .nk-menu-item -->
 
-
+                        <li class="nk-menu-item">
+                            <a href="{{route('laporan.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span>
+                                <span class="nk-menu-text">Laporan</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
 
 
 
@@ -131,16 +149,20 @@
                         <li class="nk-menu-item">
                             <a href="{{url('dashboard')}}" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
-                                <span class="nk-menu-text">Dashboard</span>
+                                <span class="nk-menu-text">Absensi</span>
                             </a>
                         </li><!-- .nk-menu-item -->
-                        <li class="nk-menu-heading">
-                            <h6 class="overline-title text-primary-alt">Apps</h6>
-                        </li><!-- .nk-menu-heading -->
                         <li class="nk-menu-item">
-                            <a href="{{route('absensi.semua')}}" class="nk-menu-link">
-                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
-                                <span class="nk-menu-text">Absensi</span>
+                            <a href="{{route('siswa.detail', Auth::user()->siswa->id)}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-user-c"></em></span>
+                                <span class="nk-menu-text">Profil & Nilai</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+
+                        <li class="nk-menu-item">
+                            <a href="{{route('laporan.tambah')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-upload-cloud"></em></span>
+                                <span class="nk-menu-text">Upload Laporan</span>
                             </a>
                         </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->

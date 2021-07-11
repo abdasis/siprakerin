@@ -3,6 +3,9 @@
        <div class="row justify-content-center">
            <div class="col-md-4">
                <div class="card border border-primary" style="margin-top: 150px">
+                   <div class="card-body text-center">
+                       <img height="150px" src="{{asset('logo-smk.png')}}" alt="">
+                   </div>
                    <div class="card-body">
                        <x-jet-validation-errors class="mb-4" />
                        @if (session('status'))

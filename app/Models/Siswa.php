@@ -23,4 +23,14 @@ class Siswa extends Model
     {
         return $this->hasOne(Nilai::class);
     }
+
+    public function suratKeterangan()
+    {
+        return $this->belongsTo(SuratKeterangan::class);
+    }
+
+    public function laporan()
+    {
+        return $this->belongsTo(Laporan::class);
+    }
 }

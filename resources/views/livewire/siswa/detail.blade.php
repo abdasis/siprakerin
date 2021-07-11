@@ -57,6 +57,39 @@
                     </table>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h5>Nilai Terbaru</h5>
+                    </div>
+                    <table class="table table-borderless">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Siswa</th>
+                            <th>Prilaku</th>
+                            <th>Sikap</th>
+                            <th>Keterampilan</th>
+                            <th>Kerajinan</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        @foreach(\App\Models\Nilai::where('siswa_id', $siswa->id)->get() as $nilai)
+                            <tr>
+                                <td>{{$nilai->id}}</td>
+                                <td>{{$nilai->siswa->nama_lengkap}}</td>
+                                <td>{{$nilai->perilaku}}</td>
+                                <td>{{$nilai->sikap}}</td>
+                                <td>{{$nilai->keterampilan}}</td>
+                                <td>{{$nilai->kerajinan}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

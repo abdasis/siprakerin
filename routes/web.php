@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
@@ -58,15 +58,26 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::get('tambah', \App\Http\Livewire\Nilai\Tambah::class)->name('nilai.tambah');
         Route::get('sunting/{id}', \App\Http\Livewire\Nilai\Sunting::class)->name('nilai.sunting');
     });
-    Route::get('lokasi', function (){
-       $lokasi = \Stevebauman\Location\Facades\Location::get();
-       dd($lokasi);
+
+    Route::group(['prefix' => 'document'], function(){
+        Route::get('semua', \App\Http\Livewire\Document\Semua::class)->name('document.semua');
+        Route::get('tambah', \App\Http\Livewire\Document\Tambah::class)->name('document.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Document\Sunting::class)->name('document.sunting');
     });
 
     Route::get('keluar', function(){
         Auth::logout();
-        redirect('/dashboard');
+        return redirect('/dashboard');
     })->name('keluar');
+
+    Route::get('profile-pengembang', \App\Http\Livewire\ProfilePengembang::class)->name('profile-pengembang');
+    Route::get('surat-keterangan', \App\Http\Livewire\SuratKeterangan\Semua::class)->name('surat-keterangan.semua');
+
+    Route::group(['prefix' => 'laporan'], function(){
+        Route::get('semua', \App\Http\Livewire\Laporan\Semua::class)->name('laporan.semua');
+        Route::get('tambah', \App\Http\Livewire\Laporan\Tambah::class)->name('laporan.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Laporan\Sunting::class)->name('laporan.sunting');
+    });
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');

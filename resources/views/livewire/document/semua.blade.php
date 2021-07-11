@@ -1,7 +1,7 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-    <a href="{{Auth::user()->roles != 'dudi' ? '#' : route('nilai.tambah')}}">
-        <button class="btn btn-primary mb-2" ><em class="icon ni ni-note-add"></em>Tambah Nilai</button>
+    <a href="{{Auth::user()->roles != 'admin' ? '#' : route('document.tambah')}}">
+        <button class="btn btn-primary mb-2" ><em class="icon ni ni-note-add"></em>Tambah Document</button>
     </a>
     <div class="card bg-white">
         <div class="card-header bg-white border-bottom">
@@ -26,25 +26,21 @@
             <tr>
                 <th>No.</th>
                 <th>Nama Lengkap</th>
-                <th>Sikap</th>
-                <th>Perilaku</th>
-                <th>Keterampilan</th>
-                <th>Kerajinan</th>
+                <th>File</th>
+                <th>Keterangan</th>
                 <th class="text-center">Option</th>
             </tr>
             </thead>
 
             <tbody>
-            @foreach($semua_nilai as $key => $nilai)
+            @foreach($semua_document as $key => $document)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$nilai->siswa->nama_lengkap}}</td>
-                    <td>{{$nilai->sikap}}</td>
-                    <td>{{$nilai->perilaku}}</td>
-                    <td>{{$nilai->keterampilan}}</td>
-                    <td>{{$nilai->kerajinan}}</td>
+                    <td>{{$document->nama_dokumen}}</td>
+                    <td>{{$document->file}}</td>
+                    <td>{!! Str::limit($document->diskripsi, 150) !!}</td>
                     <td class="text-center">
-                        <a href="{{route('nilai.sunting', $nilai->id)}}">
+                        <a href="{{route('document.sunting', $document->id)}}">
                             <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
                         </a>
                         <button class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em> Hapus</button>

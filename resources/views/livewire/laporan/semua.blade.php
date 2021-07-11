@@ -1,13 +1,10 @@
 <div>
-    {{-- Success is as dangerous as failure. --}}
-    <a href="{{Auth::user()->roles != 'dudi' ? '#' : route('nilai.tambah')}}">
-        <button class="btn btn-primary mb-2" ><em class="icon ni ni-note-add"></em>Tambah Nilai</button>
-    </a>
+    {{-- The Master doesn't talk, he acts. --}}
     <div class="card bg-white">
         <div class="card-header bg-white border-bottom">
             <div class="row justify-between">
                 <div class="col-4 my-auto">
-                    <h6>Data Nilai</h6>
+                    <h6>Data Laporan Semua Siswa</h6>
                 </div>
                 <div class="col-4">
                     <div class="form-group">
@@ -26,28 +23,31 @@
             <tr>
                 <th>No.</th>
                 <th>Nama Lengkap</th>
-                <th>Sikap</th>
-                <th>Perilaku</th>
-                <th>Keterampilan</th>
-                <th>Kerajinan</th>
+                <th>Jurusan</th>
+                <th>File</th>
+                <th>Tanggal Upload</th>
                 <th class="text-center">Option</th>
             </tr>
             </thead>
 
             <tbody>
-            @foreach($semua_nilai as $key => $nilai)
+            @foreach($semua_laporan as $key => $document)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$nilai->siswa->nama_lengkap}}</td>
-                    <td>{{$nilai->sikap}}</td>
-                    <td>{{$nilai->perilaku}}</td>
-                    <td>{{$nilai->keterampilan}}</td>
-                    <td>{{$nilai->kerajinan}}</td>
+                    <td>{{$document->siswa->nama_lengkap}}</td>
+                    <td>{{$document->siswa->jurusan}}</td>
+                    <td>{{$document->file_laporan}}</td>
+                    <td>{{\Carbon\Carbon::parse($document->create_at)->format('d-F-Y')}}</td>
                     <td class="text-center">
-                        <a href="{{route('nilai.sunting', $nilai->id)}}">
-                            <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
+                        <a wire:click="download({{$document->id}})">
+                            <button class="btn btn-sm btn-outline-success"><em class="icon ni ni-download-cloud"></em></button>
                         </a>
-                        <button class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em> Hapus</button>
+                        @if(Auth::user()->roles == 'siswa')
+                            <a href="{{route('laporan.sunting', $document->id)}}">
+                                <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-edit-alt"></em></button>
+                            </a>
+                            <button wire:click="delete({{$document->id}})" class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em> Hapus</button>
+                        @endif
                     </td>
                 </tr>
             @endforeach

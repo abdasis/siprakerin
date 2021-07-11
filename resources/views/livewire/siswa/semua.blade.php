@@ -4,7 +4,7 @@
         <div class="card-header bg-white border-bottom">
             <div class="row justify-between">
                 <div class="col-4 my-auto">
-                    <h6>Semua Admin</h6>
+                    <h6>Data Semua Siswa</h6>
                 </div>
                 <div class="col-4">
                     <div class="form-group">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Nilai;
 
+use App\Models\Dudi;
 use App\Models\Nilai;
 use Livewire\Component;
 
@@ -34,6 +35,9 @@ class Tambah extends Component
     }
     public function render()
     {
-        return view('livewire.nilai.tambah');
+        $dudi =  Dudi::where('user_id', \Auth::user()->id)->first();
+        return view('livewire.nilai.tambah', [
+            'dudi' => $dudi
+        ]);
     }
 }

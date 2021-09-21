@@ -40,6 +40,20 @@
                         </li><!-- .nk-menu-item -->
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
+                                <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
+                                <span class="nk-menu-text">Data Dudi</span>
+                            </a>
+                            <ul class="nk-menu-sub">
+                                <li class="nk-menu-item">
+                                    <a href="{{route('dudi.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Dudi</span></a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{route('dudi.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Dudi</span></a>
+                                </li>
+                            </ul><!-- .nk-menu-sub -->
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item has-sub">
+                            <a href="#" class="nk-menu-link nk-menu-toggle">
                                 <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
                                 <span class="nk-menu-text">Data Siswa</span>
                             </a>
@@ -71,20 +85,7 @@
                             </ul><!-- .nk-menu-sub -->
                         </li><!-- .nk-menu-item -->
 
-                        <li class="nk-menu-item has-sub">
-                            <a href="#" class="nk-menu-link nk-menu-toggle">
-                                <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
-                                <span class="nk-menu-text">Data Dudi</span>
-                            </a>
-                            <ul class="nk-menu-sub">
-                                <li class="nk-menu-item">
-                                    <a href="{{route('dudi.tambah')}}" class="nk-menu-link"><span class="nk-menu-text">Tambah Dudi</span></a>
-                                </li>
-                                <li class="nk-menu-item">
-                                    <a href="{{route('dudi.semua')}}" class="nk-menu-link"><span class="nk-menu-text">Semua Dudi</span></a>
-                                </li>
-                            </ul><!-- .nk-menu-sub -->
-                        </li><!-- .nk-menu-item -->
+
 
                         <li class="nk-menu-item">
                             <a href="{{route('pilih-penempatan')}}" class="nk-menu-link">

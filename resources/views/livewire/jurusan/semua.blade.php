@@ -34,7 +34,7 @@
                 <div class="card-header bg-white border-bottom">
                     <div class="row justify-between">
                         <div class="col-4 my-auto">
-                            <h6>Semua Admin</h6>
+                            <h6>Data Semua Jurusan</h6>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
@@ -69,9 +69,6 @@
                             <td class="text-center">
                                 <a wire:click.prevent="edit({{$jurusan->id}})" href="{{route('siswa.sunting', $jurusan->id)}}">
                                     <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
-                                </a>
-                                <a href="{{route('siswa.detail', $jurusan->id)}}">
-                                    <button class="btn btn-sm btn-outline-info"><em class="icon ni ni-eye"></em></button>
                                 </a>
                                 <button wire:click="hapus({{$jurusan->id}})" class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em></button>
                             </td>

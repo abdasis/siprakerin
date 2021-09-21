@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">Detail Pengguna</div>
+                <div class="card-header">Detail Admin</div>
                 <div class="card-body">
                     <div class="text-center">
                         <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" width="150" class="rounded-circle" alt="">

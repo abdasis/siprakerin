@@ -1,13 +1,13 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-    <a href="{{Auth::user()->roles != 'admin' ? '#' : route('document.tambah')}}">
+    {{--<a href="{{Auth::user()->roles != 'admin' ? '#' : route('document.tambah')}}">
         <button class="btn btn-primary mb-2" ><em class="icon ni ni-note-add"></em>Tambah Document</button>
-    </a>
+    </a>--}}
     <div class="card bg-white">
         <div class="card-header bg-white border-bottom">
             <div class="row justify-between">
                 <div class="col-4 my-auto">
-                    <h6>Data Nilai</h6>
+                    <h6>Data Semua Dokument</h6>
                 </div>
                 <div class="col-4">
                     <div class="form-group">

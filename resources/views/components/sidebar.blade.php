@@ -52,6 +52,13 @@
                                 </li>
                             </ul><!-- .nk-menu-sub -->
                         </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('jurusan.semua')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
+                                <span class="nk-menu-text">Jurusan</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+
                         <li class="nk-menu-item has-sub">
                             <a href="#" class="nk-menu-link nk-menu-toggle">
                                 <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
@@ -95,14 +102,6 @@
                         </li><!-- .nk-menu-item -->
 
                         <li class="nk-menu-item">
-                            <a href="{{route('jurusan.semua')}}" class="nk-menu-link">
-                                <span class="nk-menu-icon"><em class="icon ni ni-navigate"></em></span>
-                                <span class="nk-menu-text">Jurusan</span>
-                            </a>
-                        </li><!-- .nk-menu-item -->
-
-
-                        <li class="nk-menu-item">
                             <a href="{{route('nilai.semua')}}" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-book"></em></span>
                                 <span class="nk-menu-text">Nilai</span>
@@ -115,9 +114,6 @@
                                 <span class="nk-menu-text">Laporan</span>
                             </a>
                         </li><!-- .nk-menu-item -->
-
-
-
                     </ul><!-- .nk-menu -->
                 @elseif(Auth::user()->roles == 'dudi')
                     <ul class="nk-menu">

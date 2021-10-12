@@ -22,7 +22,7 @@
             <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama Lengkap</th>
+                <th>Nama File</th>
                 <th>File</th>
                 <th>Keterangan</th>
                 <th class="text-center">Option</th>
@@ -50,3 +50,5 @@
         </div>
     </div>
 </div>
+
+

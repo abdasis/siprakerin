@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <div class="form-control-wrap">
                             <div class="form-icon form-icon-left">
-                                <em class="icon ni ni-user"></em>
+                                <em class="icon ni ni-search"></em>
                             </div>
                             <input type="text" class="form-control form-control-sm rounded-pill" id="default-03" placeholder="Pencarian">
                         </div>
@@ -23,7 +23,6 @@
             <tr>
                 <th>No.</th>
                 <th>Nama Lengkap</th>
-                <th>Email</th>
                 <th>NIS</th>
                 <th>TTL</th>
                 <th>Jurusan</th>
@@ -37,7 +36,6 @@
                     <td>{{$key+1}}</td>
                     <td>{{$siswa->nama_lengkap}}</td>
                     <td>{{$siswa->nis}}</td>
-                    <td>{{$siswa->user->email}}</td>
                     <td>{{$siswa->tempat_lahir}}, {{\Carbon\Carbon::parse($siswa->tanggal_lahir)->format('d-m-Y')}}</td>
                     <td>{{$siswa->jurusan}}</td>
                     <td class="text-center">

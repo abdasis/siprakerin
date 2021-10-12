@@ -16,7 +16,7 @@
 
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header border-bottom bg-white">Biodata Admin</div>
+                <div class="card-header border-bottom bg-white">Biodata Siswa</div>
                 <div class="card-body">
                     <table class="table table-borderless table-sm table-responsive">
                         <tr>

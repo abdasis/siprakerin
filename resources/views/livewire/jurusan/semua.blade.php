@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <div class="form-control-wrap">
                                     <div class="form-icon form-icon-left">
-                                        <em class="icon ni ni-user"></em>
+                                        <em class="icon ni ni-search"></em>
                                     </div>
                                     <input type="text" class="form-control form-control-sm rounded-pill" id="default-03" placeholder="Pencarian">
                                 </div>

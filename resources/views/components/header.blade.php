@@ -10,19 +10,6 @@
                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
             </div><!-- .nk-header-brand -->
-            <div class="nk-header-news d-none d-xl-block">
-                <div class="nk-news-list">
-                    <a class="nk-news-item" href="{{route('profile-pengembang')}}">
-                        <div class="nk-news-icon">
-                            <em class="icon ni ni-card-view"></em>
-                        </div>
-                        <div class="nk-news-text">
-                            <p>Profile Pengembang <span>Junaidi Faisal Ali</span> </p>
-                            <em class="icon ni ni-external"></em>
-                        </div>
-                    </a>
-                </div>
-            </div><!-- .nk-header-news -->
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
                     <li class="dropdown user-dropdown">

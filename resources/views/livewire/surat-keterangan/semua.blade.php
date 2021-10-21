@@ -22,9 +22,9 @@
             <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama File</th>
+                <th>Nama Siswa</th>
+                <th>Nama Orang Tua</th>
                 <th>File</th>
-                <th>Keterangan</th>
                 <th class="text-center">Option</th>
             </tr>
             </thead>
@@ -34,8 +34,8 @@
                 <tr>
                     <td>{{$key+1}}</td>
                     <td>{{$document->siswa->nama_lengkap}}</td>
+                    <td>{{$document->nama_orang_tua}}</td>
                     <td>{{$document->file}}</td>
-                    <td>Setuju</td>
                     <td class="text-center">
                         <a wire:click.prevent="download({{$document->id}})" href="{{route('document.sunting', $document->id)}}">
                             <button class="btn btn-sm btn-outline-success"><em class="icon ni ni-eye-alt"></em></button>

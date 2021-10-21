@@ -1,8 +1,20 @@
 <div>
     {{-- Success is as dangerous as failure. --}}
-    <a href="{{Auth::user()->roles != 'dudi' ? '#' : route('nilai.tambah')}}">
-        <button class="btn btn-primary mb-2" ><em class="icon ni ni-note-add"></em>Tambah Nilai</button>
-    </a>
+    <div class="d-flex flex-row g-1">
+        <div class="">
+            <a href="{{Auth::user()->roles != 'dudi' ? '#' : route('nilai.tambah')}}">
+                <button class="btn btn-primary mb-2"><em class="icon ni ni-note-add"></em>Tambah Nilai</button>
+            </a>
+        </div>
+        <div>
+            <select wire:model='jurusan' name="" class="custom-select" id="">
+                <option value="">Pilih Jurusan</option>
+                @foreach (App\Models\Jurusan::latest()->get() as $jurusan)
+                <option value="{{ $jurusan->nama_jurusan }}">{{ $jurusan->nama_jurusan }}</option>
+                @endforeach
+            </select>
+        </div>
+    </div>
     <div class="card bg-white">
         <div class="card-header bg-white border-bottom">
             <div class="row justify-between">
@@ -15,7 +27,8 @@
                             <div class="form-icon form-icon-left">
                                 <em class="icon ni ni-search"></em>
                             </div>
-                            <input type="text" class="form-control form-control-sm rounded-pill" id="default-03" placeholder="Pencarian">
+                            <input type="text" class="form-control form-control-sm rounded-pill" id="default-03"
+                                placeholder="Pencarian">
                         </div>
                     </div>
                 </div>
@@ -23,19 +36,19 @@
         </div>
         <table class="table table-sm">
             <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nama Lengkap</th>
-                <th>Sikap</th>
-                <th>Perilaku</th>
-                <th>Keterampilan</th>
-                <th>Kerajinan</th>
-                <th class="text-center">Option</th>
-            </tr>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Lengkap</th>
+                    <th>Sikap</th>
+                    <th>Perilaku</th>
+                    <th>Keterampilan</th>
+                    <th>Kerajinan</th>
+                    <th class="text-center">Option</th>
+                </tr>
             </thead>
 
             <tbody>
-            @foreach($semua_nilai as $key => $nilai)
+                @foreach($semua_nilai as $key => $nilai)
                 <tr>
                     <td>{{$key+1}}</td>
                     <td>{{$nilai->siswa->nama_lengkap}}</td>
@@ -47,10 +60,11 @@
                         <a href="{{route('nilai.sunting', $nilai->id)}}">
                             <button class="btn btn-sm btn-outline-warning"><em class="icon ni ni-pen"></em></button>
                         </a>
-                        <button class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em> Hapus</button>
+                        <button class="btn btn-sm btn-outline-danger"><em class="icon ni ni-trash-alt"></em>
+                            Hapus</button>
                     </td>
                 </tr>
-            @endforeach
+                @endforeach
             </tbody>
         </table>
         <div class="card-footer bg-white">

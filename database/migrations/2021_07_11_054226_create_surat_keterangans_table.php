@@ -16,6 +16,7 @@ class CreateSuratKeterangansTable extends Migration
         Schema::create('surat_keterangans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('siswa_id')->constrained()->cascadeOnDelete();
+            $table->string('nama_orang_tua', 100);
             $table->string('nama_surat');
             $table->string('file');
             $table->timestamps();

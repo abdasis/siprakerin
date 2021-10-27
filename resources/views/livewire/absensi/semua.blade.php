@@ -22,9 +22,10 @@
             <thead>
             <tr>
                 <th>No.</th>
+                <th>Nama Siswa</th>
+                <th>Jurusan</th>
                 <th>Tanggal Absensi</th>
                 <th>Status</th>
-                <th>Dibuat Pada</th>
                 <th class="text-center">Option</th>
             </tr>
             </thead>
@@ -33,7 +34,8 @@
             @foreach($semua_absensi as $key => $absensi)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$absensi->tanggal_absensi}}</td>
+                    <td>{{$absensi->user->name}}</td>
+                    <td>{{$absensi->user->siswa->jurusan}}</td>
                     <td>{{Str::upper($absensi->status)}}</td>
                     <td> {{\Carbon\Carbon::parse($absensi->created_at)->format('d-m-Y')}}</td>
                     <td class="text-center">

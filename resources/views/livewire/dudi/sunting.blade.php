@@ -67,6 +67,18 @@
 
                     <div class="col-md-12 mt-2">
                         <div class="form-group">
+                            <label for="" class="form-label">Jurusan</label>
+                            <select wire:model="jurusan_id" class="form-control" name="" id="">
+                                <option value="">Pilih Jurusan</option>
+                                @foreach($semua_jurusan  as $jurusan)
+                                    <option value="{{$jurusan->id}}">{{$jurusan->nama_jurusan}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="form-group">
                             <label for="" class="form-label">Alamat</label>
                             <textarea class="form-control" wire:model="alamat" name="" id="" cols="30" rows="6"></textarea>
                         </div>

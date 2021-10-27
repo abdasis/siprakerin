@@ -18,8 +18,8 @@
                            @csrf
 
                            <div>
-                               <x-jet-label for="email" class="form-label" value="{{ __('Email') }}" />
-                               <x-jet-input id="email" class="form-control shadow-none" type="email" name="email" :value="old('email')" required autofocus />
+                               <x-jet-label for="email" class="form-label" value="{{ __('Nama Lengkap') }}" />
+                               <x-jet-input id="email" class="form-control shadow-none" type="text" name="name" :value="old('name')" required autofocus />
                            </div>
 
                            <div class="mt-4">

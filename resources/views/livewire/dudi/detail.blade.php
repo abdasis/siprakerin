@@ -32,6 +32,12 @@
                         </tr>
 
                         <tr>
+                            <td>Jurusan</td>
+                            <td>:</td>
+                            <td>{{$dudi->jurusan->nama_jurusan}}</td>
+                        </tr>
+
+                        <tr>
                             <td>Alamat</td>
                             <td>:</td>
                             <td>{{$dudi->alamat}}</td>

@@ -3,13 +3,14 @@
 namespace App\Http\Livewire\Dudi;
 
 use App\Models\Dudi;
+use App\Models\Jurusan;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Component;
 
 class Sunting extends Component
 {
-    public  $nama_perusahaan, $nama_direktur, $telepon, $email, $alamat, $password, $password_confirmation;
+    public  $nama_perusahaan, $nama_direktur, $telepon, $email, $alamat, $password, $password_confirmation, $jurusan_id;
 
     public $dudi_id;
     public function mount($id)
@@ -21,6 +22,7 @@ class Sunting extends Component
         $this->email = $dudi->user->email;
         $this->alamat = $dudi->alamat;
         $this->dudi_id = $dudi->id;
+        $this->jurusan_id = $dudi->jurusan_id;
     }
 
 
@@ -33,6 +35,7 @@ class Sunting extends Component
             'email' => 'required',
             'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required|min:8',
+            'jurusan_id' => 'required'
         ];
     }
 
@@ -54,16 +57,20 @@ class Sunting extends Component
             $dudi->nama_direktur = $this->nama_direktur;
             $dudi->telepon = $this->telepon;
             $dudi->alamat = $this->alamat;
+            $dudi->jurusan_id = $this->jurusan_id;
             $user->dudi()->save($dudi);
             \DB::commit();
             $this->alert('success', 'Data berhasil disimpan');
+            $this->redirectRoute('dudi.semua');
         }catch (\Exception $exception){
             $this->alert('error', $exception->getMessage());
         }
     }
     public function render()
     {
-        return view('livewire.dudi.sunting');
+        return view('livewire.dudi.sunting',[
+            'semua_jurusan' => Jurusan::latest()->get()
+        ]);
     }
 }
 

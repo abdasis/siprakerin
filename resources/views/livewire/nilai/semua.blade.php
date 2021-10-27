@@ -19,7 +19,7 @@
         <div class="card-header bg-white border-bottom">
             <div class="row justify-between">
                 <div class="col-4 my-auto">
-                    <h6>Data Nilai</h6>
+                    <h6>Data Nilai Prakerin</h6>
                 </div>
                 <div class="col-4">
                     <div class="form-group">

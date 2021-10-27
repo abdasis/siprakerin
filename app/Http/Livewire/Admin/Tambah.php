@@ -11,7 +11,7 @@ use PHPUnit\Exception;
 class Tambah extends Component
 {
 
-    public $nama_lengkap, $title, $jabatan, $email, $password, $password_confirmation;
+    public $nama_lengkap, $title, $jabatan, $email, $password, $password_confirmation, $tanggal_lahir, $telepon, $nip;
 
     public function rules()
     {
@@ -21,7 +21,9 @@ class Tambah extends Component
             'jabatan' => 'required',
             'password_confirmation' => 'required',
             'password' => 'required|confirmed|min:8',
-            'email' => 'unique:users'
+            'email' => 'unique:users',
+            'telepon' => 'required',
+            'tanggal_lahir' => 'required',
         ];
     }
 
@@ -43,6 +45,9 @@ class Tambah extends Component
             $admin->nama_lengkap = $this->nama_lengkap;
             $admin->title = $this->title;
             $admin->jabatan = $this->jabatan;
+            $admin->tanggal_lahir = $this->tanggal_lahir;
+            $admin->nip = $this->nip;
+            $admin->telepon = $this->telepon;
             $user->admin()->save($admin);
             $this->alert('success', 'Data Berhasil disimpan');
             $this->reset();

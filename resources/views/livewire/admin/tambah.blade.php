@@ -29,6 +29,13 @@
 
                     <div class="col-md-6 mt-2">
                         <div class="form-group">
+                            <label for="" class="form-label">NIP</label>
+                            <input wire:model="nip" type="text" name="" id="" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                        <div class="form-group">
                             <label for="" class="form-label">Email</label>
                             <input wire:model="email" type="text" name="" id="" class="form-control">
                         </div>
@@ -43,8 +50,24 @@
 
                     <div class="col-md-6 mt-2">
                         <div class="form-group">
-                            <label for="" class="form-label">Title</label>
+                            <label for="" class="form-label">Pendidikan</label>
                             <input wire:model="title" type="text" name="" id="" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-6 mt-2">
+                        <div class="form-group">
+                            <label for="" class="form-label">Tanggal Lahir</label>
+                            <input wire:model="tanggal_lahir" type="date" name="" id="" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="form-group">
+                            <label for="" class="form-label">Telepon</label>
+                            <input wire:model="telepon" type="text" name="" id="" class="form-control">
                         </div>
                     </div>
 
@@ -54,6 +77,7 @@
                             <input wire:model="password" type="password" name="password" id="" class="form-control">
                         </div>
                     </div>
+
 
                     <div class="col-md-6 mt-2">
                         <div class="form-group">

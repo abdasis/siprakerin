@@ -3,13 +3,14 @@
 namespace App\Http\Livewire\Dudi;
 
 use App\Models\Dudi;
+use App\Models\Jurusan;
 use App\Models\User;
 use Livewire\Component;
 use function PHPUnit\Framework\exactly;
 
 class Tambah extends Component
 {
-    public  $nama_perusahaan, $nama_direktur, $telepon, $email, $alamat, $password, $password_confirmation;
+    public  $nama_perusahaan, $nama_direktur, $telepon, $email, $alamat, $password, $password_confirmation, $jurusan_id;
 
     public function rules()
     {
@@ -20,6 +21,7 @@ class Tambah extends Component
             'email' => 'required',
             'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required|min:8',
+            'jurusan_id' => 'required'
         ];
     }
 
@@ -42,6 +44,7 @@ class Tambah extends Component
             $dudi->nama_direktur = $this->nama_direktur;
             $dudi->telepon = $this->telepon;
             $dudi->alamat = $this->alamat;
+            $dudi->jurusan_id = $this->jurusan_id;
             $user->dudi()->save($dudi);
             \DB::commit();
             $this->alert('success', 'Data berhasil disimpan');
@@ -51,6 +54,8 @@ class Tambah extends Component
     }
     public function render()
     {
-        return view('livewire.dudi.tambah');
+        return view('livewire.dudi.tambah',[
+            'semua_jurusan' => Jurusan::latest()->get()
+        ]);
     }
 }

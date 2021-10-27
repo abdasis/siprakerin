@@ -26,16 +26,30 @@
                         </tr>
 
                         <tr>
+                            <td>Tanggal Lahir</td>
+                            <td>:</td>
+                            <td>{{$admin->tanggal_lahir}}</td>
+                        </tr>
+
+                        <tr>
                             <td>Jabatan</td>
                             <td>:</td>
                             <td>{{$admin->jabatan}}</td>
                         </tr>
 
                         <tr>
-                            <td>Title</td>
+                            <td>Pendidikan</td>
                             <td>:</td>
                             <td>{{$admin->title}}</td>
                         </tr>
+
+                        <tr>
+                            <td>Telepon</td>
+                            <td>:</td>
+                            <td>{{$admin->telepon}}</td>
+                        </tr>
+
+
                     </table>
                 </div>
             </div>

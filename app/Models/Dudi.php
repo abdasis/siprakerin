@@ -18,5 +18,10 @@ class Dudi extends Model
     {
         return $this->belongsToMany(Siswa::class, 'dudi_siswa');
     }
+
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class);
+    }
 }
 

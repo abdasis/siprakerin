@@ -111,7 +111,7 @@
                         <li class="nk-menu-item">
                             <a href="{{route('laporan.semua')}}" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span>
-                                <span class="nk-menu-text">Laporan</span>
+                                <span class="nk-menu-text">Laporan Prakerin</span>
                             </a>
                         </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->
@@ -137,7 +137,7 @@
                         <li class="nk-menu-item">
                             <a href="{{route('nilai.semua')}}" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-book"></em></span>
-                                <span class="nk-menu-text">Nilai</span>
+                                <span class="nk-menu-text">Nilai Prakerin</span>
                             </a>
                         </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->

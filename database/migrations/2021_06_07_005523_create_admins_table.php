@@ -15,9 +15,12 @@ class CreateAdminsTable extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('nip')->nullable();
             $table->string('nama_lengkap');
             $table->string('title');
             $table->string('jabatan');
+            $table->string('tanggal_lahir')->nullable();
+            $table->string('telepon')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

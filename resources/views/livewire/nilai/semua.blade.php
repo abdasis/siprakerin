@@ -74,7 +74,7 @@
         @if(!empty($jurusan))
             <a href="{{route('export', $jurusan)}}">
                 <button class="btn btn-success float-right">
-                    Print Excel
+                    Cetak
                 </button>
             </a>
         @endif

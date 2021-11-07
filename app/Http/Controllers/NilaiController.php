@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\NilaiExport;
 use App\Models\Nilai;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class NilaiController extends Controller
@@ -81,5 +83,11 @@ class NilaiController extends Controller
     public function destroy(Nilai $nilai)
     {
         //
+    }
+
+    public function export($jurusan)
+    {
+        $nama_file = Carbon::now() . '-' . 'nilai-siswa' . '.xlsx';
+        return \Excel::download(new NilaiExport($jurusan), $nama_file);
     }
 }

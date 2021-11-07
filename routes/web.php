@@ -78,6 +78,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('tambah', \App\Http\Livewire\Laporan\Tambah::class)->name('laporan.tambah');
         Route::get('sunting/{id}', \App\Http\Livewire\Laporan\Sunting::class)->name('laporan.sunting');
     });
+
+    Route::group(['prefix' => 'export'], function(){
+        Route::get('nilai/{jurusan}', [\App\Http\Controllers\NilaiController::class, 'export'])->name('export');
+    });;
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');

@@ -9,8 +9,8 @@
         <div>
             <select wire:model='jurusan' name="" class="custom-select" id="">
                 <option value="">Pilih Jurusan</option>
-                @foreach (App\Models\Jurusan::latest()->get() as $jurusan)
-                <option value="{{ $jurusan->nama_jurusan }}">{{ $jurusan->nama_jurusan }}</option>
+                @foreach (App\Models\Jurusan::latest()->get() as $j)
+                <option value="{{ $j->nama_jurusan }}">{{ $j->nama_jurusan }}</option>
                 @endforeach
             </select>
         </div>
@@ -69,5 +69,15 @@
         </table>
         <div class="card-footer bg-white">
         </div>
+    </div>
+    <div class="mt-2">
+        @if(!empty($jurusan))
+            <a href="{{route('export', $jurusan)}}">
+                <button class="btn btn-success float-right">
+                    Print Excel
+                </button>
+            </a>
+        @endif
+
     </div>
 </div>

@@ -24,7 +24,7 @@
                 <th>No.</th>
                 <th>Nama Perusahaan</th>
                 <th>Nama Direktur</th>
-                <th>Jurusan</th>
+                <th>Nama Pembimbing</th>
                 <th>Email</th>
                 <th>Telepon</th>
                 <th class="text-center">Option</th>
@@ -37,7 +37,7 @@
                     <td>{{$key+1}}</td>
                     <td>{{$dudi->nama_perusahaan}}</td>
                     <td>{{$dudi->nama_direktur}}</td>
-                    <td>{{$dudi->jurusan->nama_jurusan ?? 'Tidak ada jurusan'}}</td>
+                    <td>{{$dudi->nama_pembimbing}}</td>
                     <td>{{$dudi->user->email}}</td>
                     <td>{{$dudi->telepon}}</td>
                     <td class="text-center">

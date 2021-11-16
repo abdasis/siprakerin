@@ -114,6 +114,12 @@
                                 <span class="nk-menu-text">Laporan Prakerin</span>
                             </a>
                         </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('profile-pengembang')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
+                                <span class="nk-menu-text">Profile Pengembang</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->
                 @elseif(Auth::user()->roles == 'dudi')
                     <ul class="nk-menu">
@@ -140,7 +146,14 @@
                                 <span class="nk-menu-text">Nilai Prakerin</span>
                             </a>
                         </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('profile-pengembang')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
+                                <span class="nk-menu-text">Profile Pengembang</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->
+
                 @elseif(Auth::user()->roles == 'siswa')
                     <ul class="nk-menu">
                         <li class="nk-menu-item">
@@ -160,6 +173,12 @@
                             <a href="{{route('laporan.tambah')}}" class="nk-menu-link">
                                 <span class="nk-menu-icon"><em class="icon ni ni-upload-cloud"></em></span>
                                 <span class="nk-menu-text">Upload Laporan</span>
+                            </a>
+                        </li><!-- .nk-menu-item -->
+                        <li class="nk-menu-item">
+                            <a href="{{route('profile-pengembang')}}" class="nk-menu-link">
+                                <span class="nk-menu-icon"><em class="icon ni ni-user"></em></span>
+                                <span class="nk-menu-text">Profile Pengembang</span>
                             </a>
                         </li><!-- .nk-menu-item -->
                     </ul><!-- .nk-menu -->

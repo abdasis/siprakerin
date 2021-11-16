@@ -35,7 +35,6 @@ class Sunting extends Component
             'email' => 'required',
             'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required|min:8',
-            'jurusan_id' => 'required'
         ];
     }
 
@@ -57,7 +56,8 @@ class Sunting extends Component
             $dudi->nama_direktur = $this->nama_direktur;
             $dudi->telepon = $this->telepon;
             $dudi->alamat = $this->alamat;
-            $dudi->jurusan_id = $this->jurusan_id;
+            $dudi->jurusan_id = 1;
+            $dudi->nama_pembimbing  = $this->pembimbing;
             $user->dudi()->save($dudi);
             \DB::commit();
             $this->alert('success', 'Data berhasil disimpan');

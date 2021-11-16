@@ -67,13 +67,8 @@
 
                     <div class="col-md-12 mt-2">
                         <div class="form-group">
-                            <label for="" class="form-label">Jurusan</label>
-                            <select wire:model="jurusan_id" class="form-control" name="" id="">
-                                <option value="">Pilih Jurusan</option>
-                                @foreach($semua_jurusan  as $jurusan)
-                                    <option value="{{$jurusan->id}}">{{$jurusan->nama_jurusan}}</option>
-                                @endforeach
-                            </select>
+                            <label for="" class="form-label">Pembimbing</label>
+                            <input wire:model="pembimbing" type="text" name="" placeholder="" id="" class="form-control">
                         </div>
                     </div>
 

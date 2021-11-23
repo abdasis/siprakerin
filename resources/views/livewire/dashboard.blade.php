@@ -150,7 +150,7 @@
                 </thead>
 
                 <tbody>
-                @foreach(\App\Models\Document::latest()->paginate(25) as $key => $dokument)
+                @foreach(\App\Models\Document::latest()->paginate(25) as $key => $document)
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$document->nama_dokumen}}</td>

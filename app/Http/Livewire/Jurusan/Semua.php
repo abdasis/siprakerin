@@ -9,6 +9,7 @@ use Livewire\Component;
 
 class Semua extends Component
 {
+
     public $kode_jurusan, $nama_jurusan, $jurusan_id, $statusUpdate;
 
     public function rules()
@@ -26,6 +27,12 @@ class Semua extends Component
         $this->nama_jurusan = $jurusan->nama_jurusan;
         $this->jurusan_id = $jurusan->id;
         $this->statusUpdate = true;
+    }
+
+    public function hapus($id)
+    {
+        Jurusan::find($id)->delete();
+        $this->alert('success', 'Data berhasil dihapus');
     }
 
     public function simpan()
